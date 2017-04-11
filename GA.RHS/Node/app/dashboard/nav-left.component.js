@@ -7,18 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var NavLeftComponent = (function () {
+    function NavLeftComponent() {
     }
-    return AppComponent;
+    return NavLeftComponent;
 }());
-AppComponent = __decorate([
+NavLeftComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        //templateUrl: './Node/app/app.component.html',
-        template: "<div>Hello</div>",
+        selector: 'dash-nav-left',
+        templateUrl: './Node/app/dashboard/nav-left.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], NavLeftComponent);
+exports.NavLeftComponent = NavLeftComponent;
+//# sourceMappingURL=nav-left.component.js.map

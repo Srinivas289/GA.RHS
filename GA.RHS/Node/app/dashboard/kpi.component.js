@@ -7,18 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var KPIComponent = (function () {
+    function KPIComponent() {
     }
-    return AppComponent;
+    return KPIComponent;
 }());
-AppComponent = __decorate([
+KPIComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        //templateUrl: './Node/app/app.component.html',
-        template: "<div>Hello</div>",
+        selector: 'dash-kpi',
+        templateUrl: './Node/app/dashboard/kpi.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], KPIComponent);
+exports.KPIComponent = KPIComponent;
+//# sourceMappingURL=kpi.component.js.map

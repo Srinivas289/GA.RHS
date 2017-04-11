@@ -469,6 +469,13 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="index.html" />
+    <Content Include="Node\app\app.component.html" />
+    <Content Include="Node\app\dashboard\chat.component.html" />
+    <Content Include="Node\app\dashboard\kpi.component.html" />
+    <Content Include="Node\app\dashboard\nav-left.component.html" />
+    <Content Include="Node\app\dashboard\nav-right.component.html" />
+    <Content Include="Node\app\dashboard\notifications.component.html" />
+    <Content Include="Node\app\dashboard\timeline.component.html" />
     <Content Include="Node\systemjs-angular-loader.js" />
     <Content Include="Node\systemjs.config.extras.js" />
     <Content Include="Node\systemjs.config.js" />
@@ -2945,6 +2952,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Node\app\Services\" />
     <Folder Include="node_modules\.staging\%40angular\" />
     <Folder Include="node_modules\.staging\%40types\" />
     <Folder Include="node_modules\.staging\abbrev-36081829\" />
@@ -3435,6 +3443,12 @@
     <TypeScriptCompile Include="Node\app\app.component.spec.ts" />
     <TypeScriptCompile Include="Node\app\app.component.ts" />
     <TypeScriptCompile Include="Node\app\app.module.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\chat.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\kpi.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\nav-left.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\nav-right.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\notifications.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\timeline.component.ts" />
     <TypeScriptCompile Include="Node\main.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\common\common.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\common\public_api.d.ts" />
