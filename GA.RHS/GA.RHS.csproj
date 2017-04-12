@@ -488,6 +488,7 @@
     <Content Include="Node\app\dashboard\nav-right.component.html" />
     <Content Include="Node\app\dashboard\notifications.component.html" />
     <Content Include="Node\app\dashboard\timeline.component.html" />
+    <Content Include="Node\app\Services\kpi.service.js" />
     <Content Include="Node\systemjs-angular-loader.js" />
     <Content Include="Node\systemjs.config.extras.js" />
     <Content Include="Node\systemjs.config.js" />
@@ -2908,6 +2909,8 @@
     <Content Include="node_modules\rxjs\util\toSubscriber.js.map" />
     <Content Include="node_modules\rxjs\util\tryCatch.js.map" />
     <Content Include="node_modules\rxjs\util\UnsubscriptionError.js.map" />
+    <Content Include="Node\app\Services\data.json" />
+    <Content Include="Node\app\Services\kpi.service.js.map" />
     <None Include="Properties\PublishProfiles\RHSFIScores - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\RHSFIScores - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

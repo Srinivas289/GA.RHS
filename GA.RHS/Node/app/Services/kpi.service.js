@@ -12,10 +12,10 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var KPIService = (function () {
+    //private kpiurl='/node/app/services/data.json';
     function KPIService(http) {
         this.http = http;
-        //private kpiurl='http://rhsfiscores.azurewebsites.net/dashboard/kpi';
-        this.kpiurl = '/node/app/services/data.json';
+        this.kpiurl = 'http://rhsfiscores.azurewebsites.net/dashboard/kpi';
     }
     KPIService.prototype.getKPIData = function () {
         return this.http.get(this.kpiurl).toPromise().then(function (res) { return res.json(); }).catch(this.handleError);
