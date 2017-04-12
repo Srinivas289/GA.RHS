@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RHSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RHSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Business">
           <Key>
             <PropertyRef Name="id" />
@@ -50,6 +50,26 @@ warning 6002: The table/view 'RHS.dbo.Business_distinct' does not have a primary
           <Property Name="ins_date" Type="date" Nullable="false" />
           <Property Name="ins_score" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="ins_grade" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RHS.dbo.latest_scores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="latest_scores">
+          <Key>
+            <PropertyRef Name="ins_date" />
+            <PropertyRef Name="ins_score" />
+            <PropertyRef Name="ins_grade" />
+          </Key>
+          <Property Name="id" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="ins_date" Type="date" Nullable="false" />
+          <Property Name="ins_score" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="ins_grade" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="state" Type="nvarchar" MaxLength="2" />
+          <Property Name="zip" Type="int" />
+          <Property Name="lat" Type="decimal" Precision="10" Scale="6" />
+          <Property Name="lng" Type="decimal" Precision="10" Scale="6" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'RHS.dbo.Scores' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -259,6 +279,21 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
     [Business_distinct].[ID] AS [ID]
     FROM [dbo].[Business_distinct] AS [Business_distinct]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="latest_scores" EntityType="Self.latest_scores" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [latest_scores].[id] AS [id], 
+    [latest_scores].[name] AS [name], 
+    [latest_scores].[address] AS [address], 
+    [latest_scores].[ins_date] AS [ins_date], 
+    [latest_scores].[ins_score] AS [ins_score], 
+    [latest_scores].[ins_grade] AS [ins_grade], 
+    [latest_scores].[city] AS [city], 
+    [latest_scores].[state] AS [state], 
+    [latest_scores].[zip] AS [zip], 
+    [latest_scores].[lat] AS [lat], 
+    [latest_scores].[lng] AS [lng]
+    FROM [dbo].[latest_scores] AS [latest_scores]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="Scores" EntityType="Self.Scores" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [Scores].[id] AS [id], 
@@ -302,8 +337,7 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
             <End Role="BusinessDetails" EntitySet="BusinessDetails" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RHSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -491,7 +525,7 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
             <Parameter Name="pageSize" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="rest_by_id" ReturnType="Collection(RHSModel.rest_by_id_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="rest_by_name" ReturnType="Collection(RHSModel.rest_by_name_Result)">
             <Parameter Name="lat" Mode="In" Type="Decimal" />
@@ -521,7 +555,7 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
             <Parameter Name="lng" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="rest_name_grade" ReturnType="Collection(RHSModel.rest_name_grade_Result)">
-            <Parameter Name="rid" Mode="In" Type="Int32" />
+          <Parameter Name="rid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="rest_startid_endid_geol">
             <Parameter Name="sid" Mode="In" Type="Int32" />
@@ -534,9 +568,10 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           <FunctionImport Name="SP_GetScores" ReturnType="Collection(RHSModel.SP_GetScores_Result)" />
           <FunctionImport Name="SP_GetScoresByZip" ReturnType="Collection(RHSModel.SP_GetScoresByZip_Result)" />
           <FunctionImport Name="test">
-            <Parameter Name="tname" Mode="In" Type="String" />
+          <Parameter Name="tname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="test2" />
+          <EntitySet Name="latest_scores" EntityType="RHSModel.latest_scores" />
         </EntityContainer>
         <ComplexType Name="rest_by_CSZ_Result">
           <Property Type="Int32" Name="id" Nullable="true" />
@@ -653,6 +688,24 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           <Property Type="Decimal" Name="lng" Nullable="true" Precision="10" Scale="6" />
           <Property Type="Int32" Name="accuracy" Nullable="true" />
         </ComplexType>
+        <EntityType Name="latest_scores">
+          <Key>
+            <PropertyRef Name="ins_date" />
+            <PropertyRef Name="ins_score" />
+            <PropertyRef Name="ins_grade" />
+          </Key>
+          <Property Name="id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ins_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ins_score" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ins_grade" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="zip" Type="Int32" />
+          <Property Name="lat" Type="Decimal" Precision="10" Scale="6" />
+          <Property Name="lng" Type="Decimal" Precision="10" Scale="6" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -921,6 +974,23 @@ warning 6002: The table/view 'RHS.sys.database_firewall_rules' does not have a p
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="test" FunctionName="RHSModel.Store.test" />
           <FunctionImportMapping FunctionImportName="test2" FunctionName="RHSModel.Store.test2" />
+          <EntitySetMapping Name="latest_scores">
+            <EntityTypeMapping TypeName="RHSModel.latest_scores">
+              <MappingFragment StoreEntitySet="latest_scores">
+                <ScalarProperty Name="lng" ColumnName="lng" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="zip" ColumnName="zip" />
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="ins_grade" ColumnName="ins_grade" />
+                <ScalarProperty Name="ins_score" ColumnName="ins_score" />
+                <ScalarProperty Name="ins_date" ColumnName="ins_date" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

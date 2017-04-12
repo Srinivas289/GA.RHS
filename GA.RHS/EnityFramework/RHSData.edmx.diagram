@@ -15,6 +15,7 @@
         <EntityTypeShape EntityType="RHSModel.database_firewall_rules" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="RHSModel.fk_business_pid_Cascade" ManuallyRouted="false" />
         <AssociationConnector Association="RHSModel.FK__Violation__bus_i__5CD6CB2B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RHSModel.latest_scores" Width="1.5" PointX="3.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

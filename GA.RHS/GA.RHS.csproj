@@ -214,12 +214,20 @@
       <HintPath>..\packages\System.Text.Encodings.Web.4.0.0\lib\netstandard1.0\System.Text.Encodings.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -342,6 +350,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ScoresController.cs" />
@@ -358,6 +367,9 @@
       <DependentUpon>RHSData.tt</DependentUpon>
     </Compile>
     <Compile Include="EnityFramework\LatestGrade_view.cs">
+      <DependentUpon>RHSData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EnityFramework\latest_scores.cs">
       <DependentUpon>RHSData.tt</DependentUpon>
     </Compile>
     <Compile Include="EnityFramework\rest_by_CSZ_Result.cs">
@@ -2267,6 +2279,7 @@
     <Content Include="node_modules\zone.js\dist\zone.js" />
     <Content Include="node_modules\zone.js\dist\zone.min.js" />
     <Content Include="Pages\Index.aspx" />
+    <Content Include="results.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -2952,7 +2965,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Node\app\Services\" />
     <Folder Include="node_modules\.staging\%40angular\" />
     <Folder Include="node_modules\.staging\%40types\" />
     <Folder Include="node_modules\.staging\abbrev-36081829\" />
@@ -3449,6 +3461,8 @@
     <TypeScriptCompile Include="Node\app\dashboard\nav-right.component.ts" />
     <TypeScriptCompile Include="Node\app\dashboard\notifications.component.ts" />
     <TypeScriptCompile Include="Node\app\dashboard\timeline.component.ts" />
+    <TypeScriptCompile Include="Node\app\Interfaces\KPI.ts" />
+    <TypeScriptCompile Include="Node\app\Services\kpi.service.ts" />
     <TypeScriptCompile Include="Node\main.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\common\common.d.ts" />
     <TypeScriptCompile Include="node_modules\%40angular\common\public_api.d.ts" />

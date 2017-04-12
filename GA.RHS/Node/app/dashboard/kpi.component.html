@@ -13,9 +13,9 @@
                                 <div class="col-xs-3">
                                     <i class="fa fa-comments fa-5x"></i>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
+                                <div class="col-xs-9 text-right" *ngIf="kpidetail">
+                                    <div class="huge">{{ kpidetail.Total }}</div>
+                                    <div>Total Restaurents</div>
                                 </div>
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                                 <div class="col-xs-3">
                                     <i class="fa fa-tasks fa-5x"></i>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
+                                <div class="col-xs-9 text-right"  *ngIf="kpidetail">
+                                    <div class="huge">{{kpidetail.ATotal}}</div>
+                                    <div>Grade A Restaurents</div>
                                 </div>
                             </div>
                         </div>
@@ -57,9 +57,9 @@
                                 <div class="col-xs-3">
                                     <i class="fa fa-shopping-cart fa-5x"></i>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
+                                <div class="col-xs-9 text-right"  *ngIf="kpidetail">
+                                    <div class="huge">{{kpidetail.BTotal}}</div>
+                                    <div>Grade B Restaurents</div>
                                 </div>
                             </div>
                         </div>
@@ -79,9 +79,9 @@
                                 <div class="col-xs-3">
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
+                                <div class="col-xs-9 text-right"  *ngIf="kpidetail">
+                                    <div class="huge">{{kpidetail.CTotal}}</div>
+                                    <div>Grade C Restaurents</div>
                                 </div>
                             </div>
                         </div>

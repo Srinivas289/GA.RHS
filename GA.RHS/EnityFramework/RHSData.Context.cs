@@ -35,6 +35,7 @@ namespace GA.RHS.EnityFramework
         public virtual DbSet<Zip_Scores> Zip_Scores { get; set; }
         public virtual DbSet<LatestGrade_view> LatestGrade_view { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
+        public virtual DbSet<latest_scores> latest_scores { get; set; }
     
         public virtual ObjectResult<rest_by_CSZ_Result> rest_by_CSZ(Nullable<decimal> lat, Nullable<decimal> lng, string city, string zip, string state, Nullable<int> pageNumber, Nullable<int> pageSize)
         {
