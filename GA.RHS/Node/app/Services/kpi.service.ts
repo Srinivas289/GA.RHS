@@ -9,12 +9,13 @@ export class KPIService
     private kpiurl='/node/app/services/data.json';
     constructor(private http:Http){}
     getKPIData():Promise<KPIDetail> {
-       return this.http.get(this.kpiurl).toPromise().then(res=> res.json().data as KPIDetail).catch(this.handleError);
+       return this.http.get(this.kpiurl).toPromise().then(res=> res.json() as KPIDetail).catch(this.handleError);
     }
     getString():string{
-        return "String From Service";
+        return "";
     }
-    handleError(error:any): void {
+    handleError(error:any): Promise<any> {
         console.log('Error Occurred: ',error);
+        return Promise.reject(error.message || error);
     }
 }

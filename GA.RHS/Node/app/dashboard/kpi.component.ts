@@ -7,11 +7,11 @@ import {KPIDetail} from '../Interfaces/KPI.js'
 })
 export class KPIComponent implements OnInit
 {
-    kpidetail:KPIDetail= {Total:0,ATotal:0,BTotal:0,CTotal:0};
+    kpidetail:KPIDetail= {Total:80,ATotal:0,BTotal:0,CTotal:0};
     message:string="";
     constructor(private kpiservice:KPIService){}
     getKPIDetail():void {
-        this.kpiservice.getKPIData().then(kpi=>this.kpidetail==kpi);
+        this.kpiservice.getKPIData().then(kpi=>this.kpidetail=kpi);
     }
     getMessage():void{
         this.message=this.kpiservice.getString();

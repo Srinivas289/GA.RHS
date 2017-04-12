@@ -13,12 +13,12 @@ var kpi_service_js_1 = require("../Services/kpi.service.js");
 var KPIComponent = (function () {
     function KPIComponent(kpiservice) {
         this.kpiservice = kpiservice;
-        this.kpidetail = { Total: 0, ATotal: 0, BTotal: 0, CTotal: 0 };
+        this.kpidetail = { Total: 80, ATotal: 0, BTotal: 0, CTotal: 0 };
         this.message = "";
     }
     KPIComponent.prototype.getKPIDetail = function () {
         var _this = this;
-        this.kpiservice.getKPIData().then(function (kpi) { return _this.kpidetail == kpi; });
+        this.kpiservice.getKPIData().then(function (kpi) { return _this.kpidetail = kpi; });
     };
     KPIComponent.prototype.getMessage = function () {
         this.message = this.kpiservice.getString();

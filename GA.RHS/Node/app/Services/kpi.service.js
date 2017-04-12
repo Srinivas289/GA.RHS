@@ -18,13 +18,14 @@ var KPIService = (function () {
         this.kpiurl = '/node/app/services/data.json';
     }
     KPIService.prototype.getKPIData = function () {
-        return this.http.get(this.kpiurl).toPromise().then(function (res) { return res.json().data; }).catch(this.handleError);
+        return this.http.get(this.kpiurl).toPromise().then(function (res) { return res.json(); }).catch(this.handleError);
     };
     KPIService.prototype.getString = function () {
-        return "String From Service";
+        return "";
     };
     KPIService.prototype.handleError = function (error) {
         console.log('Error Occurred: ', error);
+        return Promise.reject(error.message || error);
     };
     return KPIService;
 }());
