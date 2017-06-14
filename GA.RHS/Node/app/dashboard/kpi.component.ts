@@ -3,7 +3,7 @@ import {KPIService} from '../Services/kpi.service.js'
 import {KPIDetail} from '../Interfaces/KPI.js'
 @Component({
     selector:'dash-kpi',
-    templateUrl:'./Node/app/dashboard/kpi.component.html'
+    templateUrl:'./Node/app/dashboard/kpi.component.html',
 })
 export class KPIComponent implements OnInit
 {

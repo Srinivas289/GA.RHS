@@ -15,14 +15,21 @@ namespace GA.RHS.Controllers
         [Route("dashboard/kpi")]
         public IHttpActionResult getKPI()
         {
-            using (RHSEntities db = new RHSEntities())
+            try
             {
-                int total =db.latest_scores.Count();
-                int aTotal = db.latest_scores.Where(s=>s.ins_grade=="A").Count();
-                int bTotal = db.latest_scores.Where(s => s.ins_grade == "B").Count();
-                int cTotal = db.latest_scores.Where(s => s.ins_grade == "C").Count();
-                int dTotal = db.latest_scores.Where(s => s.ins_grade == "D").Count();
-                return Ok(new { Total=total,ATotal=aTotal,BTotal=bTotal,CTotal=cTotal });
+                using (RHSEntities db = new RHSEntities())
+                {
+                    int total = db.latest_scores.Count();
+                    int aTotal = db.latest_scores.Where(s => s.ins_grade == "A").Count();
+                    int bTotal = db.latest_scores.Where(s => s.ins_grade == "B").Count();
+                    int cTotal = db.latest_scores.Where(s => s.ins_grade == "C").Count();
+                    int dTotal = db.latest_scores.Where(s => s.ins_grade == "D").Count();
+                    return Ok(new { Total = total, ATotal = aTotal, BTotal = bTotal, CTotal = cTotal });
+                }
+            }
+            catch (Exception e)
+            {
+                return Ok(new { Total = 0, ATotal = 0, BTotal = 0, CTotal = 0, ErrorMessage = e.Message });
             }
         }
     }

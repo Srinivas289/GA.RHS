@@ -9,12 +9,22 @@ import { TimelineComponent } from './dashboard/timeline.component.js'
 import { NavLeftComponent } from './dashboard/nav-left.component.js'
 import { NavRightComponent } from './dashboard/nav-right.component.js'
 import {KPIService} from './Services/kpi.service.js'
+import { TopNavComponent } from './dashboard/topnav.component.js'
+import { DonutChartComponent } from './dashboard/charts/donut.component.js'
+import { AreaChartComponent } from './dashboard/charts/area-chart.component.js'
+import { BarChartComponent } from './dashboard/charts/bar-chart.component.js'
+import { DashboardComponent } from './dashboard/dashboard.component.js'
+import { ListComponent } from './list/list.component.js'
+import { ChartsComponent } from './charts/charts.component.js'
+import { ScoresService } from './services/scores.service.js'
+import { AppRoutingModule } from './app.routing.js'
+import * as $ from 'jquery';
 @NgModule({
-  imports:      [ BrowserModule,HttpModule ],
+  imports:      [ BrowserModule,HttpModule,AppRoutingModule ],
   declarations: [ AppComponent,KPIComponent,NotificationsComponent,ChatComponent,TimelineComponent,NavLeftComponent,
-                  NavRightComponent ],
-  bootstrap:    [ AppComponent,KPIComponent,NotificationsComponent,ChatComponent,TimelineComponent,NavLeftComponent,
-                NavRightComponent ],
-  providers:[KPIService]
+                  NavRightComponent,TopNavComponent,DonutChartComponent,AreaChartComponent,BarChartComponent,
+                  DashboardComponent,ListComponent,ChartsComponent ],
+  bootstrap:    [ AppComponent],
+  providers:    [KPIService,ScoresService]
 })
 export class AppModule { }

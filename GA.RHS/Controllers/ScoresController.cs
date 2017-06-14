@@ -5,8 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using GA.RHS.EnityFramework;
+using System.Web.Http.Cors;
 namespace GA.RHS.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class ScoresController : ApiController
     {
         // GET: api/Scores

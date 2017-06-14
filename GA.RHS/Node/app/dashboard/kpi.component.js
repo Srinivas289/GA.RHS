@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var kpi_service_js_1 = require("../Services/kpi.service.js");
 var KPIComponent = (function () {
@@ -32,7 +33,7 @@ var KPIComponent = (function () {
 KPIComponent = __decorate([
     core_1.Component({
         selector: 'dash-kpi',
-        templateUrl: './Node/app/dashboard/kpi.component.html'
+        templateUrl: './Node/app/dashboard/kpi.component.html',
     }),
     __metadata("design:paramtypes", [kpi_service_js_1.KPIService])
 ], KPIComponent);

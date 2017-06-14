@@ -482,6 +482,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="index.html" />
     <Content Include="Node\app\app.component.html" />
+    <Content Include="Node\app\dashboard\charts\area-chart.component.html" />
+    <Content Include="Node\app\dashboard\charts\area-chart.component.js" />
+    <Content Include="Node\app\dashboard\charts\bar-chart.component.html" />
+    <Content Include="Node\app\dashboard\charts\bar-chart.component.js" />
+    <Content Include="Node\app\dashboard\charts\donut.component.html" />
+    <Content Include="Node\app\dashboard\charts\donut.component.js" />
     <Content Include="Node\app\dashboard\chat.component.html" />
     <Content Include="Node\app\dashboard\kpi.component.html" />
     <Content Include="Node\app\dashboard\nav-left.component.html" />
@@ -2911,6 +2917,9 @@
     <Content Include="node_modules\rxjs\util\UnsubscriptionError.js.map" />
     <Content Include="Node\app\Services\data.json" />
     <Content Include="Node\app\Services\kpi.service.js.map" />
+    <Content Include="Node\app\dashboard\charts\area-chart.component.js.map" />
+    <Content Include="Node\app\dashboard\charts\bar-chart.component.js.map" />
+    <Content Include="Node\app\dashboard\charts\donut.component.js.map" />
     <None Include="Properties\PublishProfiles\RHSFIScores - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\RHSFIScores - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -3458,6 +3467,9 @@
     <TypeScriptCompile Include="Node\app\app.component.spec.ts" />
     <TypeScriptCompile Include="Node\app\app.component.ts" />
     <TypeScriptCompile Include="Node\app\app.module.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\charts\area-chart.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\charts\bar-chart.component.ts" />
+    <TypeScriptCompile Include="Node\app\dashboard\charts\donut.component.ts" />
     <TypeScriptCompile Include="Node\app\dashboard\chat.component.ts" />
     <TypeScriptCompile Include="Node\app\dashboard\kpi.component.ts" />
     <TypeScriptCompile Include="Node\app\dashboard\nav-left.component.ts" />
