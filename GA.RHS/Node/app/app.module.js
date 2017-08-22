@@ -25,7 +25,6 @@ var dashboard_component_js_1 = require("./dashboard/dashboard.component.js");
 var list_component_js_1 = require("./list/list.component.js");
 var charts_component_js_1 = require("./charts/charts.component.js");
 var scores_service_js_1 = require("./services/scores.service.js");
-var app_routing_js_1 = require("./app.routing.js");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +32,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_js_1.AppRoutingModule],
+        imports: [platform_browser_1.BrowserModule, http_1.HttpModule],
         declarations: [app_component_js_1.AppComponent, kpi_component_js_1.KPIComponent, notifications_component_js_1.NotificationsComponent, chat_component_js_1.ChatComponent, timeline_component_js_1.TimelineComponent, nav_left_component_js_1.NavLeftComponent,
             nav_right_component_js_1.NavRightComponent, topnav_component_js_1.TopNavComponent, donut_component_js_1.DonutChartComponent, area_chart_component_js_1.AreaChartComponent, bar_chart_component_js_1.BarChartComponent,
             dashboard_component_js_1.DashboardComponent, list_component_js_1.ListComponent, charts_component_js_1.ChartsComponent],

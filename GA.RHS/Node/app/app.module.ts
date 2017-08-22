@@ -17,10 +17,9 @@ import { DashboardComponent } from './dashboard/dashboard.component.js'
 import { ListComponent } from './list/list.component.js'
 import { ChartsComponent } from './charts/charts.component.js'
 import { ScoresService } from './services/scores.service.js'
-import { AppRoutingModule } from './app.routing.js'
-import * as $ from 'jquery';
+
 @NgModule({
-  imports:      [ BrowserModule,HttpModule,AppRoutingModule ],
+  imports:      [ BrowserModule,HttpModule ],
   declarations: [ AppComponent,KPIComponent,NotificationsComponent,ChatComponent,TimelineComponent,NavLeftComponent,
                   NavRightComponent,TopNavComponent,DonutChartComponent,AreaChartComponent,BarChartComponent,
                   DashboardComponent,ListComponent,ChartsComponent ],

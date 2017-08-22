@@ -25,7 +25,7 @@ var AppRoutingModule = (function () {
 AppRoutingModule = __decorate([
     core_1.NgModule({
         imports: [router_1.RouterModule.forRoot(appRoutes)],
-        exports: [router_1.RouterModule]
+        exports: [router_1.RouterModule, router_1.RouterOutlet]
     })
 ], AppRoutingModule);
 exports.AppRoutingModule = AppRoutingModule;
